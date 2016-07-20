@@ -10,14 +10,21 @@ Solution:
 
 This problem can be solved by setting vm.overcommit_memory=1 and then reboot, or with below methods at runtime:
 
-* add vm.overcommit_memory=1 to /etc/sysctl.conf, then run command below:
-    $ sysctl -p
+* add vm.overcommit_memory=1 to /etc/sysctl.conf, then run command sysctl -p:
+
+    `# echo 1 >> /etc/sysctl.conf`
+    `# sysctl -p`
+
 * run command below directly:
-    $ sysctl vm.overcommit_memory=1
+
+    `# sysctl vm.overcommit_memory=1`
+
 * or run command below:
-    $ echo 1 > /proc/sys/vm/overcommit_memory
+
+    `# echo 1 > /proc/sys/vm/overcommit_memory`
 
 You can verify the setting via command:
-    $ sysctl -n vm.overcommit_memory
+
+    `# sysctl -n vm.overcommit_memory`
 
 NOTE: Commands above are also general way to set other kernel parameters.
