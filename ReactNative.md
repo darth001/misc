@@ -305,6 +305,27 @@ Starting the app on emulator-5554 (adb -s emulator-5554 shell am start -n com.aw
 Starting: Intent { cmp=com.awesomeproject/.MainActivity }
 
 
-##
+## Anddroid 7.0
 
+D:\Users\Michael\AppData\Local\Android\Sdk\tools\emulator.exe -netdelay none -netspeed full -avd Nexus_5X_API_24
+Hax is enabled
+Hax ram_size 0x60000000
+HAX is working and emulator runs in fast virt mode.
+console on port 5554, ADB on port 5555
+
+
+07/21 07:57:37: Launching app
+$ adb push D:\Users\Michael\AndroidStudioProjects\EasyManager\app\build\outputs\apk\app-debug.apk /data/local/tmp/com.easymanager.easymanager
+$ adb shell pm install -r "/data/local/tmp/com.easymanager.easymanager"
+Success
+
+
+$ adb shell am start -n "com.easymanager.easymanager/com.easymanager.easymanager.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+Client not ready yet..Waiting for process to come online
+Connected to process 2727 on device Nexus_5X_API_24 [emulator-5554]
+Connected to process 2727 on device Nexus_5X_API_24 [emulator-5554]
+Connected to process 2727 on device Nexus_5X_API_24 [emulator-5554]
+Connected to process 2727 on device Nexus_5X_API_24 [emulator-5554]
+Connected to process 2727 on device Nexus_5X_API_24 [emulator-5554]
+Application terminated.
 
