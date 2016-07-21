@@ -4,12 +4,14 @@
 
 Problem:
 
+```
 [michael@localhost ~]$ emulator -list-avds
 Nexus_5X_API_23
 [michael@localhost ~]$ emulator -avd Nexus_5X_API_23
 terminate called after throwing an instance of 'std::logic_error'
   what():  basic_string::_S_construct null not valid
 Aborted (core dumped)
+```
 
 Solvtion:
 
@@ -18,6 +20,7 @@ Solvtion:
 
 ## launching emulator via Android Studio succeded
 
+```
 /home/michael/Android/Sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_5X_API_22
 Creating filesystem with parameters:
     Size: 69206016
@@ -66,4 +69,4 @@ Connected to process 3090 on device Nexus_5X_API_22 [emulator-5554]
 Connected to process 3090 on device Nexus_5X_API_22 [emulator-5554]
 Connected to process 3090 on device Nexus_5X_API_22 [emulator-5554]
 Connected to process 3090 on device Nexus_5X_API_22 [emulator-5554]
-
+```
