@@ -74,3 +74,54 @@ For the Percona packages we found in Step 2 above(for dnf-enabled systems, repla
 
 [Installation Guide](https://dev.mysql.com/doc/refman/5.7/en/linux-installation-yum-repo.html)
 
+
+
+## Reset password
+
+[mysqld_safe - MySQL Server Startup Script](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html)
+[Managing MySQL Server with systemd](https://dev.mysql.com/doc/refman/5.7/en/server-management-using-systemd.html)
+
+To add or change systemd options for MySQL, these methods are available:
+* Use a localized systemd configuration file
+* Arrange for systemd to set environment variables for the MySQL server process
+* Set the MYSQLD_OPTS systemd variable
+
+To specify options for mysqld without modifying systemd configurations files directly, set or unset the MYSQLD_OPTS systemd variable. For example:
+```
+    $ sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
+    $ sudo systemctl unset-environment MYSQLD_OPTS
+```
+
+After modifying the systemd environment, restart the server to make the changes effective:
+    `$ sudo systemctl restart mysqld`
+
+__So, to reset root password:__
+
+* Set mysqld options via systemd environment variable
+
+    `$ sudo systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"`
+
+* Restart MySQL server
+
+    `$ sudo systemctl restart mysqld`
+
+* Login as root to change password
+
+```
+    $ mysql -u root
+    > UPDATE mysql.user SET authentication_string=PASSWORD('YourNewPassword') WHERE User='root' AND Host='localhost';
+    > quit
+```
+* Unset mysqld options via systemd environment variable
+
+    `$ sudo systemctl unset-environment MYSQLD_OPTS`
+
+* Restart MySQL server again
+
+    `$ sudo systemctl restart mysqld`
+
+* Now you can login with your new password
+
+    `$ mysql -u root -p`
+
+##
