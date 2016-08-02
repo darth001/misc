@@ -58,30 +58,44 @@ The directory '/home/michael/.cache/pip' or its parent directory is not owned by
     $ sudo apt-get install python-dev libfreetype6-dev
     $ sudo pip install numpy scipy matploylib pandas
 
-## R
-    
-    $ echo "deb https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/linux/ubuntu trusty/" | sudo tee -a /etc/apt/sources.list.d/r-lang.list
-    $ sudo apt-get update
-    $ sudo apt-get install r-base
-
 ## Jenkins
 
-    $ echo "deb http://pkg.jenkins-ci.org/debian binary/" | sudo tee -a /etc/apt/sources.list.d/jenkins.list
+    $ echo "deb http://pkg.jenkins-ci.org/debian binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list
     $ sudo apt-get update
     $ sudo apt-get install jenkins
 
 ## ElasticSearch
 
     $ wget -O- https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-    $ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+    $ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee /etc/apt/sources.list.d/elasticsearch-2.x.list
     $ sudo apt-get update
     $ sudo apt-get install elasticsearch
 
 ## SlatStack
 
     $ wget -O- https://repo.slatstack.com/apt/ubuntu/14.04/amd64/latest/SLATSTACK-GPG-KEY.pub | sudo apt-key add -
-    $ echo "deb http://repo.slatstack.com/apt/ubuntu/14.04/amd64/latest trusty main" | sudo tee -a /etc/apt/sources.list.d/slatstack.list
+    $ echo "deb http://repo.slatstack.com/apt/ubuntu/14.04/amd64/latest trusty main" | sudo tee /etc/apt/sources.list.d/slatstack.list
     $ sudo apt-get update
     $ sudo apt-get install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api
 
-##
+## Puppet
+
+    $ wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+    $ sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+    $ sudo apt-get update
+
+## Ansible
+
+    $ sudo apt-get install software-properties-common
+    $ sudo apt-add-repository ppa:ansible/ansible
+    $ sudo apt-get update
+    $ sudo apt-get install ansible
+
+## Docker
+
+    $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    $ echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list
+    $ sudo apt-get update
+    $ sudo apt-get purge lxc-docker
+    $ sudo apt-get install docker
+

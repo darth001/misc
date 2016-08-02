@@ -79,7 +79,7 @@ for PostgreSQL 9.3+ install the adminpack "extension" in the "postgres" database
 ## MongoDB
 
     $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-    $ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.2.list
+    $ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
     $ sudo apt-get update
     $ sudo apt-get install mongodb-org # or
     $ sudo apt-get install mongodb-org=3.2.6 mongodb-org-server=3.2.6 mongodb-org-shell=3.2.6 mongodb-org-mongos=3.2.6 mongodb-org-tools=3.2.6 # or
@@ -89,11 +89,26 @@ for PostgreSQL 9.3+ install the adminpack "extension" in the "postgres" database
     $ echo "mongodb-org-shell hold" | sudo dpkg --set-selections
     $ echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 
+## NodeJS
+
 ## Python
 
 ## Ruby
 
 ## PHP
+
+## R
+    
+    $ echo "deb https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/linux/ubuntu trusty/" | sudo tee /etc/apt/sources.list.d/r-lang.list
+    $ sudo apt-get update
+    $ sudo apt-get install r-base
+
+## .Net
+
+    $ sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+    $ echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" | sudo tee /etc/apt/sources.list.d/dotnetdev.list
+    $ sudo apt-get update
+    $ sudo apt-get install dotnet-dev-1.0.0-preview2-003121
 
 ## Django
 
@@ -103,9 +118,8 @@ for PostgreSQL 9.3+ install the adminpack "extension" in the "postgres" database
 
 ## RabbitMQ
 
-    $ echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee -a /etc/apt/sources.list.d/rabbitmq.list
+    $ echo "deb http://www.rabbitmq.com/debian/ testing main" | sudo tee /etc/apt/sources.list.d/rabbitmq.list
     $ wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
     $ sudo apt-get update
     $ sudo apt-get install rabbitmq-server
 
-##
