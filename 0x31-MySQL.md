@@ -124,4 +124,12 @@ __So, to reset root password:__
 
     `$ mysql -u root -p`
 
-##
+## MySQL Upgrade
+
+mysql> show variables;
+ERROR 1146 (42S02): Table 'performance_schema.session_variables' doesn't exist
+
+    $ mysql_upgrade -u root -p --force
+    $ sudo systemctl restart mysqld
+
+
