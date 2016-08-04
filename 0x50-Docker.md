@@ -4,22 +4,22 @@
 
 [Docker for Fedora 23](https://docs.docker.com/engine/installatioin/linux/fedora/)
 
-    $ sudo dnf update
-    $ sudo cat > /etc/yum.repos.d/docker.repo
-
 ```
-[dockerrepo]
+    $ sudo dnf update
+    $ sudo tee /etc/yum.repos.d/docker.repo <<EOF
+[docker]
 name=Dcoker Repository
 baseurl=https://yum.dockerproject.org/repo/main/fedora/$releasever/
 enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
-```
+EOF
 
     $ sudo dnf install docker-engine
     $ sudo systemctl enable docker
     $ sudo systemctl start docker
     $ sudo docker run hello-world
+```
 
 ##
 
