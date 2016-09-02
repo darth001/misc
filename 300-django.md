@@ -3,6 +3,69 @@
 
 ## South
 
+__South has been deprecated.__
+From Django 1.7 upwards, migrations are built into the core of Django.
+
+https://south.readthedocs.io/
+
+The First Migration
+
+    $ ./manage.py schemamigration app --initial
+    $ ./manage.py migrate app
+
+Changing the model
+
+    $ ./manage.py schemamigration app --auto
+    $ ./manage.py migrate app
+
+Defaults
+
+    $ ./manage.py schemamigration app --auto
+    $ ? The field 'Modle.Field' does not have a default specified, yet is NOT NULL.
+    $ ? Since you are adding or removing this field, you MUST specify a default
+    $ ? value to use for existing rows. Would you like to:
+    $ ? 1. Quit now, and add a default to the field in models.py
+    $ ? 2. Specify a one-off value to use for existing columns now
+    $ ? Please select a choice:
+    ...
+
+    $ ./manage.py migrate app
+
+Uniques
+
+    $ ./manage.py schemamigration app --auto
+    $ ./manage.py migrate app
+
+ManyToMany fields
+
+Custom fields
+
+Iteratively working on a migration
+
+    $ ./manage.py schemamigration app --auto --update
+    $ ./manage.py migrate app
+
+Listing current migrations
+
+    $ ./manage.py migrate --list
+
+Data migrations
+
+    $ ./manage.py schemamigraiton app --auto
+    $ ./manage.py datamigration app custom_migration
+
+
+```
+# xxxx_custom_migration.py
+def forwards(self, orm):
+    ...
+
+def backwards(self, orm):
+    raise Runtimeerror("Cannot reverse this migration.")
+```
+
+    $ ./manage.py schemamigration app --auto
+    $ ./manage.py migrate app
 
 ## django-guardian
 
