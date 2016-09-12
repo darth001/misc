@@ -49,4 +49,9 @@ The simplest way to start the Redis server is just executing the redis-server bi
     $ redis-server
     $ ...
 
+##
 
+Python binding:
+
+    $ sudo pip install hiredis
+    $ sudo pip install redis
