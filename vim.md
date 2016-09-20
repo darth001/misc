@@ -49,6 +49,24 @@ set softtabstop=2
 ```
 These settings will cause as many hard tabs as possible being used for indentation, and spaces will be used to fill in the remains. If you want to distinguish between "indentation" and "alignment", i.e., the number of hard tabs equals the indentation level, use the [Smart Tabs](http://vim.wikia.com/wiki/VimTip1626) plug-in.
 
+_Explanation of the options_
+
+Vim's different indentation options are an endless source of grief and confusion for new users. There are plenty of example vimrcs out there that will tell you how theirs is the proper setup. More often than not, they are misguided. Let `:help` be your reference, and this page be your guide to Vim's indentation options.
+
+`tabstop`
+    changes the width of the `TAB` character, plain and simple.
+
+`softtabstop`
+    affects what happens when you press the `<TAB>` or `<BS>` keys. Its default value is the same as the value of `tabstop`, but when using indentation without hard tabs or mixed indentation, you want to set it to the same value as `shiftwidth`. If `expandtab` is unset, and `tabstop` is different from `softtabstop`, the `<TAB>` key will minimize the amount of spaces inserted by using multiples of `TAB` characters. For instances, if `tabstop` is 8, and the amount of consecutive space inserted is 20, two `TAB` characters and four spaces will be used.
+
+`shiftwidth`
+    affects what happens when you press `>>`, `<<` or `==`. It also affects how automatic indentation works.
+
+`expandtab` affects what happens when you press the `<TAB>` key. If `expandtab` is set, pressing the `<TAB>` key will always insert `softtabstop` amount of space characters. Otherwise, the amount of spaces inserted is minimized by using `TAB` characters.
+
+`smarttab`
+    affects how `TAB` key presses are interpreted depending on where the cursor is. If `smarttab` is on, a `<TAB>` keys inserts indentation accouring to `shiftwidth` at the begining of the line, whereas `tabstop` and `softtabstop` are used elsewhere. There is seldom any need to set this option, unless it is necessary to use hard `TAB` characters in body text or code.
+
 
 ##
 
