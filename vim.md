@@ -10,6 +10,11 @@ https://github.com/vim/vim.git
 
 ##
 
+[Example vimrc](http://vim.wikia.com/wiki/Example_vimrc)
+
+
+##
+
 [Indenting source code](http://vim.wikia.com/wiki/Indenting_source_code)
 
 The indent features of Vim are very helpful for indenting source code. This tip discusses settings that affect indentation.
