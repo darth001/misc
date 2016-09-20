@@ -8,14 +8,10 @@ http://www.vim.org/
 https://github.com/vim/vim.git
 
 
-##
-
-[Example vimrc](http://vim.wikia.com/wiki/Example_vimrc)
+## [Example vimrc](http://vim.wikia.com/wiki/Example_vimrc)
 
 
-##
-
-[Indenting source code](http://vim.wikia.com/wiki/Indenting_source_code)
+## [Indenting source code](http://vim.wikia.com/wiki/Indenting_source_code)
 
 The indent features of Vim are very helpful for indenting source code. This tip discusses settings that affect indentation.
 
@@ -73,13 +69,10 @@ Vim's different indentation options are an endless source of grief and confusion
     affects how `TAB` key presses are interpreted depending on where the cursor is. If `smarttab` is on, a `<TAB>` keys inserts indentation accouring to `shiftwidth` at the begining of the line, whereas `tabstop` and `softtabstop` are used elsewhere. There is seldom any need to set this option, unless it is necessary to use hard `TAB` characters in body text or code.
 
 
-##
+## [How to stop auto indenting](http://vim.wikia.com/wiki/VimTip330)
 
-[How to stop auto indenting](http://vim.wikia.com/wiki/VimTip330)
 
-##
-
-[Toggle auto-indenting for code paste](http://vim.wikia.com/wiki/VimTip906)
+## [Toggle auto-indenting for code paste](http://vim.wikia.com/wiki/VimTip906)
 
 Pasting text into a terminal running Vim with automatic indentation enabled can destroy the indentation of the pasted text.
 
@@ -107,9 +100,8 @@ __References__
 :help paste
 :help pastetoggle
 
-##
 
-[Setting the font in the GUI](http://vim.wikia.com/wiki/Setting_the_font_in_the_GUI)
+## [Setting the font in the GUI](http://vim.wikia.com/wiki/Setting_the_font_in_the_GUI)
 
 if has('gui_running')
   set guioptions-=T  " no toolbar
