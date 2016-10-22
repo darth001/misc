@@ -31,8 +31,19 @@ Java 9 is a developer preview and the general release is scheduled for March 201
 
 There can be multiple Java installations on one server. You can configure which version is the default for use in the command line by using `update-alternatives`, which manages which symbolic links are used for different commands.
 
+```
     $ sduo update-alternatives --config java
+There are 3 choices for the alternative java (providing /usr/bin/java).
 
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-7-oracle/jre/bin/java          1082      auto mode
+  1            /usr/lib/jvm/java-7-oracle/jre/bin/java          1082      manual mode
+  2            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+* 3            /usr/lib/jvm/java-8-oracle/jre/bin/java          1081      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 
+````
 
 This can also be done for other Java commands, such as the compiler `javac`, the documentation generator `javadoc`, the JAR signing tool `jarsigner` and more.
 
