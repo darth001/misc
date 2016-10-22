@@ -36,3 +36,6 @@ into source code which is used by the different client libraries and the server 
     `$ thrift --gen <language> <Thrift filename>`
 
 
+##
+
+https://diwakergupta.github.io/thrift-missing-guide/
