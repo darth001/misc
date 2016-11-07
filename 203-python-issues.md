@@ -95,3 +95,12 @@ Finally, you can create a `PoolManager` that verifies certificates when performi
 ```
 
 If you do not wish to use pyOpenSSL, you can simply omit the call to `urllib3.contrib.pyopenssl.inject_into_urllib3()`. urllib3 will fall back to the standard library `ssl` module. You may experience several warnings when doing this.
+
+
+##
+
+Building cryptography on Linux
+
+    $ sudo yum groupinstall 'Development tools'
+    $ sudo yum install python-devel openssl-devel libffi-devel
+    $ sudo pip install urllib3[secure]
