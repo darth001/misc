@@ -6,6 +6,7 @@
 Understanding kernel logging
 
 https://unix.stackexchange.com/questions/205883/understand-logging-in-linux
+https://docs.google.com/document/pub?id=1IC9yOXj7j6cdLLxWEBAGRL6wl97tFxgjLUEHIX3MSTs&pli=1
 
 ---
 
