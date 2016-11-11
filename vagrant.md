@@ -13,12 +13,16 @@ https://atlas.hashicorp.com/centos/
 
 ##
 
-* Download the latest version Vagrant from https://www.vagrantup.com/downloads.html and install it:
+* Download and install Vagrant
+
+Get the latest version Vagrant from https://www.vagrantup.com/downloads.html and install it:
 
     $ wget https://releases.hashicorp.com/vagrant/1.8.6/vagrant_1.8.6_x86_64.rpm
     $ sudo rpm -ivh vagrant_1.8.6_x86_64.rpm
 
-* Search and install your target box from https://atlas.hashicorp.com/boxes/search
+* Install a box(VirtualBox)
+
+Search and install your target box from https://atlas.hashicorp.com/boxes/search
 
     $ mkdir -p vagrant/centos6
     $ cd vagrant/centos6
@@ -37,3 +41,30 @@ NOTE: Often it will spend a lot of time to finish downloading the box, especiall
 Now modify the parameter `config.vm.box` to the one you specify above, e.g., centos6,
 
     $ vagrant up
+
+
+##
+
+Configure NFS
+
+To sync folder between host and guest machines, NFS/rsync/SMB/VirtualBox shared folders are provided.
+For Vagrant VirtualBox provider + CentOS, rsync is the default sync type while VirtualBox Guest Additions are not preinstalled, NFS is recommended, details at
+
+https://seven.centos.org/2016/08/updated-centos-vagrant-images-available-v1607-01/
+
+Given that both host and guest has NFS installed(NFS server required for host, NFS client required for guest), if VirtualBox provider used, you also make sure a private network setup,
+this is due to a limitations of VirtualBox's built-in networking, VMware not affected(https://www.vagrantup.com/docs/synced-folders/nfs.html).
+Related config are as follows,
+
+    config.vm.network "private_network", ip: "192.168.2.2"
+    config.vm.synced_folder ".", "/data", type: "nfs"
+
+NOTE:
+
+First, private_network type can be DHCP or Static IP, however, when dhcp type choosed, some error occurs:
+```
+No guest IP was given to the Vagrant core NFS helper. This is an internal error that should be reported as a bug.
+```
+Second, when using static IP, make sure not conflict with other network, such as your host's LAN network.
+
+Third, make sure FIREWALL rules permit NFS traffic.
