@@ -61,10 +61,15 @@ Related config are as follows,
 
 NOTE:
 
-First, private_network type can be DHCP or Static IP, however, when dhcp type choosed, some error occurs:
-```
-No guest IP was given to the Vagrant core NFS helper. This is an internal error that should be reported as a bug.
-```
-Second, when using static IP, make sure not conflict with other network, such as your host's LAN network.
+1. private_network should be enabled, orelse
+`NFS requires a host-only network to be created.
+Please add a host-only network to the machine (with either DHCP or a
+static IP) for NFS to work.`
 
-Third, make sure FIREWALL rules permit NFS traffic.
+2. private_network type can be DHCP or Static IP, however, when dhcp type choosed, some error occurs:
+`No guest IP was given to the Vagrant core NFS helper. This is an
+internal error that should be reported as a bug.`
+
+3. When using static IP, make sure not conflict with other network, such as your host's LAN network.
+
+4. ake sure FIREWALL & SELinux rules permit NFS traffic.
