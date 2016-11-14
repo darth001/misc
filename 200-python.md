@@ -52,7 +52,7 @@ virtualenv
 
 ##
 
-Install Python 2.7 on CentOS 6.x
+Install Python 2.7/3.5 on CentOS 6.x
 
 https://github.com/h2oai/h2o-2/wiki/Installing-python-2.7-on-centos-6.3.-Follow-this-sequence-exactly-for-centos-machine-only
 
@@ -68,7 +68,7 @@ If you need access to a newer version of Python you must compile it yourself and
 
 Note: Development environment should be established via this standard way just like `apt-get install build-essential` on Ubuntu.
 
-* Install Python
+* Install Python 2.7
 
     $ wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
     $ tar xJf Python-2.7.12.tar.xz
@@ -126,4 +126,20 @@ lrwxrwxrwx. 1 root root       6 Oct  3 12:59 /usr/bin/python2 -> python
 -rwxr-xr-x. 1 root root     376 Nov 10 16:20 /usr/local/bin/pip2.7
 -rwxr-xr-x. 1 root root 6294745 Nov 10 16:12 /usr/local/bin/python2.7
 -rwxr-xr-x. 1 root root    1687 Nov 10 16:13 /usr/local/bin/python2.7-config
+
+* Install Python 3.5
+
+To install Python 3.5, additional development files and libraries(xz-devel) should be installed:
+
+    $ sudo yum install xz-devel
+    $ wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz
+    $ tar xf Python-3.5.2.tar.xz
+    $ cd Python-3.5.2
+    $ make
+    $ sudo make altinstall
+
+_END_
+
+##
+
 
