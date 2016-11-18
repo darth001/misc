@@ -80,7 +80,7 @@ Python build finished, but the necessary bits to build these modules were not fo
 _bsddb, _curses, _curses_panel, _sqlite3, _ssl, _tkinter, bsddb185, bz2, dbm, dl, gdbm, imageop, readline, sunaudiodev, zlib
 To find the necessary bits, look in setup.py in detect_modules() for the module's name.
 
-summarized as below:
+Summarized as below:
 
 _bsddb                  --  db4-devel
 _curses, _curses_panel  --  ncurses-devel
@@ -113,9 +113,9 @@ After installing your newly installed Python interpreter will be available as /u
 
 * Check Python versions
 
+Check python/pip/easy_install versions:
+
     $ ls -ltr /usr/{,local/}bin/{python,pip,easy_install}*
-ls: cannot access /usr/bin/pip*: No such file or directory
-ls: cannot access /usr/bin/easy_install*: No such file or directory
 -rwxr-xr-x. 2 root root    4864 Aug 18 15:14 /usr/bin/python
 lrwxrwxrwx. 1 root root       6 Oct  3 12:59 /usr/bin/python2 -> python
 -rwxr-xr-x. 2 root root    4864 Aug 18 15:14 /usr/bin/python2.6
@@ -137,6 +137,27 @@ To install Python 3.5, additional development files and libraries(xz-devel) shou
     $ cd Python-3.5.2
     $ make
     $ sudo make altinstall
+
+* Check Python versions
+
+Check python/pip/easy_install versions:
+
+    $ ls -ltr /usr/{,local/}bin/{python,pip,easy_install}*
+-rwxr-xr-x. 2 root root    9032 Aug 18 15:14 /usr/bin/python2.6
+-rwxr-xr-x. 2 root root    9032 Aug 18 15:14 /usr/bin/python
+lrwxrwxrwx. 1 root root       6 Oct  3 12:59 /usr/bin/python2 -> python
+-rwxr-xr-x. 1 root root 6294745 Nov 10 16:12 /usr/local/bin/python2.7
+-rwxr-xr-x. 1 root root    1687 Nov 10 16:13 /usr/local/bin/python2.7-config
+-rwxr-xr-x. 1 root root     420 Nov 10 16:20 /usr/local/bin/easy_install-2.7
+-rwxr-xr-x. 1 root root     412 Nov 10 16:20 /usr/local/bin/easy_install
+-rwxr-xr-x. 1 root root     376 Nov 10 16:20 /usr/local/bin/pip2.7
+-rwxr-xr-x. 1 root root     372 Nov 10 16:20 /usr/local/bin/pip2
+-rwxr-xr-x. 1 root root     370 Nov 10 16:20 /usr/local/bin/pip
+-rwxr-xr-x. 2 root root 9629953 Nov 14 16:42 /usr/local/bin/python3.5m
+-rwxr-xr-x. 2 root root 9629953 Nov 14 16:42 /usr/local/bin/python3.5
+-rwxr-xr-x. 1 root root    3066 Nov 14 16:43 /usr/local/bin/python3.5m-config
+-rwxr-xr-x. 1 root root     241 Nov 14 16:44 /usr/local/bin/easy_install-3.5
+-rwxr-xr-x. 1 root root     213 Nov 14 16:44 /usr/local/bin/pip3.5
 
 _END_
 
