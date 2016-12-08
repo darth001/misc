@@ -104,7 +104,7 @@ _lzma                   --  xz-devel
 
 OK, now we have an alternative Python installed without interferring the builtin version one, however, usually we still want to install package manager for Python: pip
 
-    $ wget https://boostrap.pypa.io/ez_setup.py | sudo /usr/local/bin/python2.7
+    $ wget -O- https://bootstrap.pypa.io/ez_setup.py | sudo /usr/local/bin/python2.7
     $ sudo /usr/local/bin/easy_install-2.7 pip
     $ sudo /usr/local/bin/pip-2.7 install ansible -i https://pypi.douban.com/simple
     $ sudo /usr/local/bin/pip-2.7 install django -i https://pypi.douban.com/simple
