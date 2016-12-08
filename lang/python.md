@@ -77,7 +77,7 @@ Note: Development environment should be established via this standard way just l
     $ make
 
 Python build finished, but the necessary bits to build these modules were not found:
-_bsddb, _curses, _curses_panel, _sqlite3, _ssl, _tkinter, bsddb185, bz2, dbm, dl, gdbm, imageop, readline, sunaudiodev, zlib
+_bsddb, _curses, _curses_panel, _sqlite3, _ssl, _tkinter, bsddb185, bz2, dbm, dl, gdbm, imageop, readline, sunaudiodev, zlib, _lzma
 To find the necessary bits, look in setup.py in detect_modules() for the module's name.
 
 Summarized as below:
@@ -95,9 +95,10 @@ imageop                 --
 readline                --  readline-devel
 sunaudiodev             --
 zlib                    --  zlib-devel
+_lzma                   --  xz-devel
 
 
-    $ sudo yum install openssl-devel ncurses-devel readline-devel sqlite-devel db4-devel gdbm-devel bzip2-devel zlib-devel tk-devel
+    $ sudo yum install openssl-devel ncurses-devel readline-devel sqlite-devel db4-devel gdbm-devel bzip2-devel zlib-devel xz-devel tk-devel
     $ make
     $ sudo make altinstall
 
