@@ -31,7 +31,7 @@ On _ns1_, open the `named.conf` file for editing:
 
     $ sudo vim /etc/named.conf
 
-Above the existing `options` block, create a new ACL block called "trusted". This is where we will define list of
+Above the existing `options` block, create a new ACL block called `trusted`. This is where we will define list of
 clients that we will allow recursive DNS queries from(i.e. your servers that are in the same datacenter as ns1).
 
 ```
@@ -57,7 +57,7 @@ Below those entries, change the `allow-transfer` directive to from "none" to ns2
 ```
 options {
     allow-transfer {10.0.20.12;}; # disable zone transfers by default
-    allow-query {trusted}; # allows queries from "trusted" clients
+    allow-query {trusted;}; # allows queries from "trusted" clients
 ```
 
 At the end of the file, add the following line:
