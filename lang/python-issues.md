@@ -104,3 +104,37 @@ Building cryptography on Linux
     $ sudo yum groupinstall 'Development tools'
     $ sudo yum install python-devel openssl-devel libffi-devel
     $ sudo pip install urllib3[secure]
+
+##
+
+	$ ipython
+Traceback (most recent call last):
+  File "/usr/bin/ipython", line 4, in <module>
+    from IPython import start_ipython
+  File "/usr/lib/python2.7/site-packages/IPython/__init__.py", line 45, in <module>
+    from .config.loader import Config
+  File "/usr/lib/python2.7/site-packages/IPython/config/__init__.py", line 6, in <module>
+    from .application import *
+  File "/usr/lib/python2.7/site-packages/IPython/config/application.py", line 19, in <module>
+    from IPython.config.configurable import SingletonConfigurable
+  File "/usr/lib/python2.7/site-packages/IPython/config/configurable.py", line 14, in <module>
+    from IPython.utils.text import indent, wrap_paragraphs
+  File "/usr/lib/python2.7/site-packages/IPython/utils/text.py", line 28, in <module>
+    from IPython.external.path import path
+ImportError: cannot import name path
+
+	$ pip list | egrep 'ipython|path'
+ipython (5.1.0)
+ipython-genutils (0.1.0)
+path.py (10.0)
+pathlib2 (2.1.0)
+testpath (0.3)
+
+It is suggested reverting to an older version of `path.py` to solve this problem from `StackOverflow`:
+
+	$ sudo pip install 'path.py<10.0' -i https://pypi.douban.com/simple
+
+Done.
+
+
+
