@@ -38,5 +38,13 @@ Reference
 
 http://stackoverflow.com/questions/40038134/fatal-errorpyconfig-hno-such-file-or-directory-when-pip-install-cryptography
 
+* build/tmp.linux-x86_64-3.5/_openssl.c:434:30: fatal error: openssl/opensslv.h: No such file or directory
+
+    $ sudo dnf install openssl-devel
+
+Reference
+
+None
+    
     $ sudo pip3 install --upgrade flask --index https://pypi.douban.com/simple
     $ sudo pip3 install --upgrade uwsgi --index https://pypi.douban.com/simple
