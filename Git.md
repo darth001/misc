@@ -14,3 +14,10 @@ Then, to see the old branch name, each client of the repository would have to:
     $ git remote prune origin
 
 NOTE: If old branch is main branch, you should change the main branch settings. Otherwise, when you run `git push origin :old-branch-name`, you'll get error of "deletion of the current branch prohibited".
+
+## Create an empty branch
+
+    $ git checkout --orphan new-branch-name
+    $ git rm --cached -r .
+    $ ...
+    $ git push origin new-branch-name
