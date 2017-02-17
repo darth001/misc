@@ -13,6 +13,10 @@
 
     $ sudo dnf install https://dev.mysql.com/get/mysql57-community-release-fc25-9.noarch.rpm
     $ sudo dnf install mysql-community-server
+    $ sudo systemctl start mysqld
+    $ sudo grep 'temporary password' /var/log/mysqld.log
+    $ mysql -u root -p
+    > ALTER USER 'root'@'localhost' IDENTIFIED BY 'Abc@2017';
 
 ## Python(Django, Scrapy, Flask, uWSGI, Gunicorn, Twisted, Tornado)
 
