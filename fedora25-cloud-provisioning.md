@@ -18,6 +18,24 @@
     $ mysql -u root -p
     > ALTER USER 'root'@'localhost' IDENTIFIED BY 'Abc@2017';
 
+## MongoDB
+
+reference
+https://docs.mongodb.com/master/tutorial/install-mongodb-on-red-hat/
+
+    $ sudo tee /etc/yum.repos.d/mongodb-org-3.4.repo <<EOF
+[mongodb-org-3.4]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/\$releasever/mongodb-org/3.4/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+EOF
+
+    $ sudo dnf -y install mongodb-org
+    $ sudo semanage port -a -t mongod_port_t -p tcp 27017
+    $ sudo systemctl start mongod
+
 ## Python(Django, Scrapy, Flask, uWSGI, Gunicorn, Twisted, Tornado)
 
     $ sudo pip3 install --upgrade pip --index https://pypi.douban.com/simple
