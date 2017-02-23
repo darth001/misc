@@ -70,3 +70,18 @@ None
     
     $ sudo pip3 install --upgrade flask --index https://pypi.douban.com/simple
     $ sudo pip3 install --upgrade uwsgi --index https://pypi.douban.com/simple
+
+## Oracle JDK
+
+Reference
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora
+
+    $  wget --no-cookies \
+    --no-check-certificate \
+    --header "Cookie: gpw_e24=https%3A%2F%2Fwww.oracle.com%2Findex.html; oraclelicense=accept-serurebackup-cookie" https://edelivery.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.rpm
+
+    $ sudo alternatives --config java
+    $ sudo alternatives --config javac
+    $ sudo sh -c "echo export JAVA_HOME=/usr/java/jdk1.8.0_121 >> /etc/environment"
