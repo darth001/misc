@@ -73,7 +73,7 @@ Note: Development environment should be established via this standard way just l
     $ wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
     $ tar xJf Python-2.7.12.tar.xz
     $ cd Python-2.7.12
-    $ ./configure
+    $ ./configure --with-ensurepip=upgrade
     $ make
 
 Python build finished, but the necessary bits to build these modules were not found:
@@ -97,6 +97,17 @@ sunaudiodev             --
 zlib                    --  zlib-devel
 _lzma                   --  xz-devel
 
+NOTE:
+-----
+Issue #22878: PEP 477 - "make install" and "make altinstall" can now install
+or upgrade pip, using the bundled pip provided by the backported ensurepip
+module.  A configure option, --with-ensurepip[=upgrade|install|no], is
+available to set the option for subsequent installs; the default for Python 2
+in "no" (do not install or upgrade pip).  The option can also be set with
+"make [alt]install ENSUREPIP=[upgrade|install|no]".
+
+from [Python 2.7.9 Release Notes](https://hg.python.org/cpython/raw-file/v2.7.9/Misc/NEWS)
+-----
 
     $ sudo yum install openssl-devel ncurses-devel readline-devel sqlite-devel db4-devel gdbm-devel bzip2-devel zlib-devel xz-devel tk-devel
     $ make
@@ -138,6 +149,12 @@ To install Python 3.5, additional development files and libraries(xz-devel) shou
     $ cd Python-3.5.2
     $ make
     $ sudo make altinstall
+
+NOTE:
+-----
+Starting with Python 3.4, pip is included by default with the Python binary installers.
+from https://docs.python.org/3/installing/
+-----
 
 * Check Python versions
 
