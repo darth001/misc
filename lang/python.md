@@ -82,20 +82,20 @@ To find the necessary bits, look in setup.py in detect_modules() for the module'
 
 Summarized as below:
 
-_bsddb                  --  db4-devel
+bz2                     --  bzip2-devel
 _curses, _curses_panel  --  ncurses-devel
+readline                --  readline-devel
 _sqlite3                --  sqlite-devel
 _ssl                    --  openssl-devel
-_tkinter                --  tk-devel
-bsddb185                --
-bz2                     --  bzip2-devel
 dbm, gdbm               --  gdbm-devel
-dl                      --
-imageop                 --
-readline                --  readline-devel
-sunaudiodev             --
-zlib                    --  zlib-devel
 _lzma                   --  xz-devel
+zlib                    --  zlib-devel
+_tkinter                --  tk-devel
+_bsddb                  --  NOTE: Deprecated since version 2.6: The bsddb modules has been removed in Python3. [https://docs.python.org/2.7/library/bsddb.html#module-bsddb]
+bsddb185                --  NOTE: This is present only to allow backwards compatibility with systems which ship with the old Berkeley DB 1.85 database library. The bsddb185 module should never be used directly in new code. The module has been removed in Python 3.
+dl                      --  NOTE: Deprecated since version 2.6: The dl module has been removed in Python 3. Use the ctypes module instead. [https://docs.python.org/2/library/dl.html]
+imageop                 --  NOTE: Deprecated since version 2.6: The imageop module has been removed in Python 3. [https://docs.python.org/2/library/imageop.html]
+sunaudiodev             --  NOTE: Deprecated since version 2.6: The sunaudiodev module has been removed in Python 3. [https://docs.python.org/2/library/sunaudio.html]
 
 NOTE:
 -----
