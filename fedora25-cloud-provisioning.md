@@ -9,6 +9,18 @@
 
     $ ssh-keygen -b 2048 -t rsa -C COMMENT
 
+## Nginx
+
+    $ sudo rpm --import http://nginx.org/keys/nginx_signing.key
+    $ sudo tee /etc/yum.repos.d/nginx.repo <<EOF
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/mainline/OS/OSRELEASE/$basearch/
+gpgcheck=1
+enabled=1
+EOF
+    $ sudo dnf -y install nginx
+
 ## MySQL
 
     $ sudo dnf install https://dev.mysql.com/get/mysql57-community-release-fc25-9.noarch.rpm
