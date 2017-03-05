@@ -2,7 +2,7 @@
 
 https://www.ruby-lang.org/
 http://rvm.io/
-
+https://ruby.taobao.org/
 
 ## source code
 
@@ -21,3 +21,9 @@ http://rvm.io/
 
     $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     $ curl -sSL https://get.rvm.io | bash -s stable
+
+## RubyGems mirrors
+
+    $ gem sources --list
+    $ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+    $ gem install rails jekyll
