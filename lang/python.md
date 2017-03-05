@@ -9,6 +9,11 @@ If something wrong with network, use socks5 proxy instead:
     $ ssh -fN -D 9999 bwg
     $ sudo pip install --proxy socks5://localhost:9999 --upgrade <package-name>
 
+or use mirror from [douban](https://pypi.douban.com/simple):
+
+    $ sudo pip install --upgrade <package-name> --index-url https://pypi.douban.com/simple
+
+
 ##
 
 django
