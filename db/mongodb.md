@@ -80,6 +80,13 @@ Add `mongodb.conf` to /lib/tmpfiles.d with following content:
 
     d /var/run/mongodb 0755 mongod mongod
 
+## journal(/var/lib/mongo/journal) size too large
+
+    $ sudo systemctl stop mongod.service
+    $ sudo rm -rf /var/lib/mongo/journal
+    $ echo 'smallfiles=true' >> /etc/mongod.conf
+    $ sudo systemctl start mongod.service
+
 ## Cannot restart MongoDB
 
 Remove lock file
