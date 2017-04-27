@@ -9,6 +9,11 @@ If something wrong with network, use socks5 proxy instead:
     $ ssh -fN -D 9999 bwg
     $ sudo pip install --proxy socks5://localhost:9999 --upgrade <package-name>
 
+or use mirror from [douban](https://pypi.douban.com/simple):
+
+    $ sudo pip install --upgrade <package-name> --index-url https://pypi.douban.com/simple
+
+
 ##
 
 django
@@ -73,7 +78,7 @@ Note: Development environment should be established via this standard way just l
     $ wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
     $ tar xJf Python-2.7.12.tar.xz
     $ cd Python-2.7.12
-    $ ./configure
+    $ ./configure --with-ensurepip=upgrade
     $ make
 
 Python build finished, but the necessary bits to build these modules were not found:
@@ -82,21 +87,32 @@ To find the necessary bits, look in setup.py in detect_modules() for the module'
 
 Summarized as below:
 
-_bsddb                  --  db4-devel
+bz2                     --  bzip2-devel
 _curses, _curses_panel  --  ncurses-devel
+readline                --  readline-devel
 _sqlite3                --  sqlite-devel
 _ssl                    --  openssl-devel
-_tkinter                --  tk-devel
-bsddb185                --
-bz2                     --  bzip2-devel
 dbm, gdbm               --  gdbm-devel
-dl                      --
-imageop                 --
-readline                --  readline-devel
-sunaudiodev             --
-zlib                    --  zlib-devel
 _lzma                   --  xz-devel
+zlib                    --  zlib-devel
+_tkinter                --  tk-devel
+_bsddb                  --  NOTE: Deprecated since version 2.6: The bsddb modules has been removed in Python3. [https://docs.python.org/2.7/library/bsddb.html#module-bsddb]
+bsddb185                --  NOTE: This is present only to allow backwards compatibility with systems which ship with the old Berkeley DB 1.85 database library. The bsddb185 module should never be used directly in new code. The module has been removed in Python 3.
+dl                      --  NOTE: Deprecated since version 2.6: The dl module has been removed in Python 3. Use the ctypes module instead. [https://docs.python.org/2/library/dl.html]
+imageop                 --  NOTE: Deprecated since version 2.6: The imageop module has been removed in Python 3. [https://docs.python.org/2/library/imageop.html]
+sunaudiodev             --  NOTE: Deprecated since version 2.6: The sunaudiodev module has been removed in Python 3. [https://docs.python.org/2/library/sunaudio.html]
 
+NOTE:
+-----
+Issue #22878: PEP 477 - "make install" and "make altinstall" can now install
+or upgrade pip, using the bundled pip provided by the backported ensurepip
+module.  A configure option, --with-ensurepip[=upgrade|install|no], is
+available to set the option for subsequent installs; the default for Python 2
+in "no" (do not install or upgrade pip).  The option can also be set with
+"make [alt]install ENSUREPIP=[upgrade|install|no]".
+
+from [Python 2.7.9 Release Notes](https://hg.python.org/cpython/raw-file/v2.7.9/Misc/NEWS)
+-----
 
     $ sudo yum install openssl-devel ncurses-devel readline-devel sqlite-devel db4-devel gdbm-devel bzip2-devel zlib-devel xz-devel tk-devel
     $ make
@@ -138,6 +154,12 @@ To install Python 3.5, additional development files and libraries(xz-devel) shou
     $ cd Python-3.5.2
     $ make
     $ sudo make altinstall
+
+NOTE:
+-----
+Starting with Python 3.4, pip is included by default with the Python binary installers.
+from https://docs.python.org/3/installing/
+-----
 
 * Check Python versions
 
