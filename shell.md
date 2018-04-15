@@ -38,3 +38,7 @@ systemctl enable ntpd.service
 ## Apache too much load from one site?
 
     $ cat access.log | cut -d' ' -f 1 | sort | uniq -c | sort -nr
+
+## Search code with pss (https://github.com/eliben/pss)
+
+    $ pss
